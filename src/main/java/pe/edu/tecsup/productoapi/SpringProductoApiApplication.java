@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CpeJavaMod03S04ProductoApiApplication {
+public class SpringProductoApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CpeJavaMod03S04ProductoApiApplication.class, args);
+		SpringApplication.run(SpringProductoApiApplication.class, args);
 	}
 
 }

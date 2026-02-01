@@ -1,0 +1,20 @@
+spring:
+  application:
+      name : cpe_java_mod03_s04_producto_api
+
+
+# Database Configuration
+  datasource :
+    url: jdbc:mariadb://localhost:3306/tiendaapi
+    username: root
+    password: root
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# Personalizado
+app:
+  storage:
+    path: uploads
