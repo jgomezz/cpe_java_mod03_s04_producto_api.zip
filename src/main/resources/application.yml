@@ -17,4 +17,4 @@ spring:
 # Personalizado
 app:
   storage:
-    path: /Users/jgomez/var/data/
+    path: /Users/developer/var/data/
