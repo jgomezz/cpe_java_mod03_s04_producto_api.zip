@@ -68,7 +68,15 @@ public class ProductoController {
                         String.valueOf(resource.contentLength())).body(resource);
     }
 
-
+    /**
+     * CREATE --> POST
+     * @param imagen
+     * @param nombre
+     * @param precio
+     * @param detalles
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/productos")
     public Producto crear(@RequestParam(name = "imagen", required = false) MultipartFile imagen,
                           @RequestParam("nombre") String nombre,
@@ -96,4 +104,29 @@ public class ProductoController {
         return producto;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/productos/id/{id}")
+    public Producto obtener(@PathVariable Long id) throws Exception{
+        log.info("call obtener: " + id);
+        Producto producto = productoService.findById(id);
+        return producto;
+    }
+
+    /**
+     * Remove --> DELETE
+     * Delete product
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/productos/id/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        log.info("call eliminar: " + id);
+        productoService.deleteById(id);
+        return ResponseEntity.ok().body("Registro eliminado");
+    }
 }
